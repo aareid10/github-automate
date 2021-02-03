@@ -18,7 +18,7 @@ jobs:
       name: Create Bug Issue
       with:
         title: Bug - ${{github.event.head_commit.message}}
-        token: ${{secrets.GITHUB_TOKEN}}
+        token: ${{secrets.AUTOMATION_TOKEN}}
         assignees: ${{github.actor}}
         labels: bug
         body: Found by ${{github.actor}} in ${{github.sha}}
