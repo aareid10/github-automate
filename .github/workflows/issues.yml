@@ -14,9 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     if: "contains(github.event.head_commit.message, '[bug]')"
     steps:
-      - uses: actions/checkout@v2
-      - uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
-        with:
-          filename: .github/issues.bugs.md
+    - uses: nashmaniac/create-issue-action@v1.1
+      name: Create Bug Issue
+      with:
+        title: Bug - ${{github.event.head_commit.message}}
+        token: ${{secrets.GITHUB_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Found by ${{github.actor}} in ${{github.sha}}
+  
