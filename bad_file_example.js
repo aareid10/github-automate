@@ -1,4 +1,4 @@
-class ClassName {
+class ClassName extends OtherClass {
   constructor() {
 
   }
