@@ -14,4 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: "contains(github.event.head_commit.message, '[bug]')"
-        run: echo "bug idenitified, creating issue..."
+        - uses: actions/checkout@v2
+        - uses: JasonEtco/create-an-issue@v2
+          env:
+            GITHUB_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+          with:
+            filename: .github/issues.bugs.md
