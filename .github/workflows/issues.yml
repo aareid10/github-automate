@@ -1,0 +1,16 @@
+# This is a basic workflow to help you get started with Actions
+
+name: AUTOMATION_PROJECT_ISSUES
+
+on:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+
+jobs:
+  issue_gen_bugs:
+    runs-on: ubuntu-latest
+    steps:
+      - if: "contains(github.event.head_commit.message, '[bug]')"
+        run: echo "bug idenitified, creating issue..."
