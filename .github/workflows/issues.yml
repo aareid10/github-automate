@@ -12,8 +12,8 @@ on:
 jobs:
   issue_gen_bugs:
     runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[bug]')"
     steps:
-      - if: "contains(github.event.head_commit.message, '[bug]')"
       - uses: actions/checkout@v2
       - uses: JasonEtco/create-an-issue@v2
         env:
