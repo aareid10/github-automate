@@ -13,6 +13,7 @@ jobs:
   issue_gen_bugs:
     runs-on: ubuntu-latest
     steps:
+    - if: "contains(github.event.head_commit.message, '[bug]')"
     - uses: nashmaniac/create-issue-action@v1.1
       name: Create Bug Issue
       with:
