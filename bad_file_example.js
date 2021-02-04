@@ -4,7 +4,7 @@ class ClassName extends OtherClass {
     this.elems = {}
   }
 
-  get elems(){
+  get elems() {
     // refactor
   }
 }

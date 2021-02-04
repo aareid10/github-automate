@@ -19,7 +19,7 @@ jobs:
         title: ${{github.event.head_commit.message}}
         token: ${{secrets.AUTOMATION_TOKEN}}
         assignees: ${{github.actor}}
-        labels: bug
+        labels: refactor
         body: Proposed by ${{github.actor}} in ${{github.sha}}
 
   issue_gen_bugs:
