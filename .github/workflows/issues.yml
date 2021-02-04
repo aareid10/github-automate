@@ -23,7 +23,7 @@ jobs:
       name: Create Bug Issue
       if: "contains(github.event.head_commit.message, '[bug]')"
       with:
-        title: Bug - ${{github.event.head_commit.message}}
+        title: ${{github.event.head_commit.message}}
         token: ${{secrets.AUTOMATION_TOKEN}}
         assignees: ${{github.actor}}
         labels: bug
