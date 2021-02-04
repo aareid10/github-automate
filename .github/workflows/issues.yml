@@ -1,20 +1,26 @@
 # This is a basic workflow to help you get started with Actions
 
-name: AUTOMATION_PROJECT_ISSUES
+name: Project Issues Automation
 
 on:
   push:
     branches:
       - main
       - master
-      - 'releases/*'
 
 jobs:
-  issue_gen_bugs_skip:
+  issue_gen_refactors:
     runs-on: ubuntu-latest
     steps:
-      - if: "! contains(github.event.head_commit.message, '[bug]')"
-        run: echo "skipping bug label"
+    - uses: nashmaniac/create-issue-action@v1.1
+      name: Create Refactor Issue
+      if: "contains(github.event.head_commit.message, '[refactor]')"
+      with:
+        title: ${{github.event.head_commit.message}}
+        token: ${{secrets.AUTOMATION_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: bug
+        body: Proposed by ${{github.actor}} in ${{github.sha}}
     
   issue_gen_bugs:
     runs-on: ubuntu-latest
