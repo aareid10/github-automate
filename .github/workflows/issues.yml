@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: nashmaniac/create-issue-action@v1.1
-      name: Create Refactor Issue
+      name: Refactor Issue
       if: "contains(github.event.head_commit.message, '[refactor]')"
       with:
         title: ${{github.event.head_commit.message}}
@@ -21,12 +21,12 @@ jobs:
         assignees: ${{github.actor}}
         labels: bug
         body: Proposed by ${{github.actor}} in ${{github.sha}}
-    
+
   issue_gen_bugs:
     runs-on: ubuntu-latest
     steps:
     - uses: nashmaniac/create-issue-action@v1.1
-      name: Create Bug Issue
+      name: Bug Issue
       if: "contains(github.event.head_commit.message, '[bug]')"
       with:
         title: ${{github.event.head_commit.message}}
@@ -34,5 +34,3 @@ jobs:
         assignees: ${{github.actor}}
         labels: bug
         body: Found by ${{github.actor}} in ${{github.sha}}
-    
-  
