@@ -2,6 +2,7 @@
 
 ![AUTOMATION_PROJECT_BUGS](https://github.com/aareid10/github-automate/workflows/AUTOMATION_PROJECT_BUGS/badge.svg)
 
+![AUTOMATION_PROJECT_ISSUES](https://github.com/aareid10/github-automate/workflows/AUTOMATION_PROJECT_ISSUES/badge.svg)
 
 
 ## [Running GitHub Actions for Certain Commit Messages](https://ryangjchandler.co.uk/articles/running-github-actions-for-certain-commit-messages)

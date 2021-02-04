@@ -1,5 +1,6 @@
 class ClassName extends OtherClass {
   constructor() {
+    super()
   }
 }
 
