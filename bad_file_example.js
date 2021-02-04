@@ -1,9 +1,12 @@
 class ClassName extends OtherClass {
   constructor() {
     super()
+    this.elems = {}
   }
 
-  get nothing(){}
+  get elems(){
+    // refactor
+  }
 }
 
 export default classname
