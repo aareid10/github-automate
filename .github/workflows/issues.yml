@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-    issue_gen_general:
+  issue_gen_general:
       runs-on: ubuntu-latest
       steps:
       - uses: nashmaniac/create-issue-action@v1.1
