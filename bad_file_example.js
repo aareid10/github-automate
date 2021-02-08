@@ -1,4 +1,4 @@
-// TODO: enhance this class
+// TODO: enhance this class overall
 
 class ClassName extends OtherClass {
   constructor() {
