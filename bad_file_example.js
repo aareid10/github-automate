@@ -1,3 +1,5 @@
+// TODO: enhance this class
+
 class ClassName extends OtherClass {
   constructor() {
     super()

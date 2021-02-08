@@ -9,6 +9,19 @@ on:
       - master
 
 jobs:
+    issue_gen_general:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: nashmaniac/create-issue-action@v1.1
+        name: Refactor Issue
+        if: "contains(github.event.head_commit.message, '[enhance]')"
+        with:
+          title: ${{github.event.head_commit.message}}
+          token: ${{secrets.AUTOMATION_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: enhancement
+          body: Proposed by ${{github.actor}} in ${{github.sha}}
+
   issue_gen_refactors:
     runs-on: ubuntu-latest
     steps:
