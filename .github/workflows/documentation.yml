@@ -12,5 +12,9 @@ jobs:
   issues_Enhancement:
       runs-on: ubuntu-latest
       steps:
+        - name: check dir
+          run: pwd
+        - name: check files
+          run: ls
         - name: document js source
-          run: ls; sh ./documentation.sh
+          run: ./documentation.sh
