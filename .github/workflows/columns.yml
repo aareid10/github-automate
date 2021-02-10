@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       name: Issue to Enhancement Tracker
-      if: github.event.label.name == 'refactor'
+      if: github.event.label.name == 'enhancement'
       with:
         action-token: "${{ secrets.AUTOMATION_TOKEN }}"
         project-url: "https://github.com/aareid10/github-automate/projects/1"
