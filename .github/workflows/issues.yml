@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# Automatic creation of labeled issues based on commits.
 
 name: Project Issues Automation
 
@@ -9,11 +9,11 @@ on:
       - master
 
 jobs:
-  issue_gen_general:
+  issues_Enhancement:
       runs-on: ubuntu-latest
       steps:
       - uses: nashmaniac/create-issue-action@v1.1
-        name: Refactor Issue
+        name: Enhancement Issue
         if: "contains(github.event.head_commit.message, '[enhance]')"
         with:
           title: ${{github.event.head_commit.message}}
@@ -21,8 +21,7 @@ jobs:
           assignees: ${{github.actor}}
           labels: enhancement
           body: Proposed by ${{github.actor}} in ${{github.sha}}
-
-  issue_gen_refactors:
+  issues_Refactors:
     runs-on: ubuntu-latest
     steps:
     - uses: nashmaniac/create-issue-action@v1.1
@@ -34,8 +33,19 @@ jobs:
         assignees: ${{github.actor}}
         labels: refactor
         body: Proposed by ${{github.actor}} in ${{github.sha}}
-
-  issue_gen_bugs:
+  issues_Stalled:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: nashmaniac/create-issue-action@v1.1
+      name: Stalled Issue
+      if: "contains(github.event.head_commit.message, '[stalled]')"
+      with:
+        title: ${{github.event.head_commit.message}}
+        token: ${{secrets.AUTOMATION_TOKEN}}
+        assignees: ${{github.actor}}
+        labels: stalled
+        body: Noted by ${{github.actor}} in ${{github.sha}}
+  issues_Bugs:
     runs-on: ubuntu-latest
     steps:
     - uses: nashmaniac/create-issue-action@v1.1

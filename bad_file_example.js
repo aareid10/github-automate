@@ -1,6 +1,18 @@
-// TODO: enhance this class overall
+// TODO: overall enhancement
 
-class ClassName extends OtherClass {
+class ClassNameA {
+  constructor() {
+    super()
+    this.elems = {}
+  }
+
+  get elems() {
+    // refactor
+  }
+}
+
+
+class ClassNameB extends OtherClass {
   constructor() {
     super()
     this.elems = {}
@@ -12,3 +24,14 @@ class ClassName extends OtherClass {
 }
 
 export default classname
+
+function functionName() {
+  constructor() {
+    super()
+    this.elems = {}
+  }
+
+  get elems() {
+    // refactor
+  }
+}

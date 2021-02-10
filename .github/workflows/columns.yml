@@ -1,11 +1,13 @@
-# Automatically move 'bug-labeled' issues to Bugs column.
+# Automatic movement of labeled issues to specific column.
+
 name: Project Columns Automation
 
 on:
   issues:
     types: [labeled]
+
 jobs:
-  Refactor_Tracker:
+  track_Refactor:
     runs-on: ubuntu-latest
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
@@ -17,7 +19,19 @@ jobs:
         column-name: "Refactors"
         label-name: "refactor"
         columns-to-ignore: "To Do,Done"
-  Bug_Tracker:
+  track_Stalled:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      name: Issue to Stalled Tracker
+      if: github.event.label.name == 'stalled'
+      with:
+        action-token: "${{ secrets.AUTOMATION_TOKEN }}"
+        project-url: "https://github.com/aareid10/github-automate/projects/1"
+        column-name: "Stalled"
+        label-name: "stalled"
+        columns-to-ignore: "To Do,Done"
+  track_Bugs:
     runs-on: ubuntu-latest
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
