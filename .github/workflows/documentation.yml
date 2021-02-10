@@ -12,6 +12,8 @@ jobs:
   issues_Enhancement:
       runs-on: ubuntu-latest
       steps:
+        - name: Checkout
+          uses: actions/checkout@v1
         - name: check dir
           run: pwd
         - name: check files
