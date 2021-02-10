@@ -13,4 +13,4 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: document js source
-          run: sh ./documentation.sh
+          run: ls; sh ./documentation.sh
