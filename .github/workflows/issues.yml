@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  issues_Enhancement:
+  issues_enhancement:
       runs-on: ubuntu-latest
       steps:
       - uses: nashmaniac/create-issue-action@v1.1
@@ -21,7 +21,7 @@ jobs:
           assignees: ${{github.actor}}
           labels: enhancement
           body: Proposed by ${{github.actor}} in ${{github.sha}}
-  issues_Refactors:
+  issues_refactors:
     runs-on: ubuntu-latest
     steps:
     - uses: nashmaniac/create-issue-action@v1.1
@@ -33,7 +33,7 @@ jobs:
         assignees: ${{github.actor}}
         labels: refactor
         body: Proposed by ${{github.actor}} in ${{github.sha}}
-  issues_Stalled:
+  issues_stalled:
     runs-on: ubuntu-latest
     steps:
     - uses: nashmaniac/create-issue-action@v1.1
@@ -45,7 +45,7 @@ jobs:
         assignees: ${{github.actor}}
         labels: stalled
         body: Noted by ${{github.actor}} in ${{github.sha}}
-  issues_Bugs:
+  issues_bugs:
     runs-on: ubuntu-latest
     steps:
     - uses: nashmaniac/create-issue-action@v1.1
