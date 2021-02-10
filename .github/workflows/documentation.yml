@@ -26,6 +26,9 @@ jobs:
             git config user.email "<>"
         - name: commit
           run: |
+            git status
             git add . --all
+            git status
+            git pull
             git commit -m "auto doc action"
             git push origin master
