@@ -1,6 +1,6 @@
 # Automatic documentation of source code.
 
-name: Project Documentation Automation
+name: Source Docs Automation
 
 on:
   push:
