@@ -1,0 +1,16 @@
+# Automatic documentation of source code.
+
+name: Project Documentation Automation
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  issues_Enhancement:
+      runs-on: ubuntu-latest
+      steps:
+        - name: document js source
+          run: sh ./documentation.sh
