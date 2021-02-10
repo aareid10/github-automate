@@ -20,3 +20,12 @@ jobs:
           run: ls
         - name: document js source
           run: ./documentation.sh
+        - name: setup git config
+          run: |
+            git config user.name "GitHub Actions Bot"
+            git config user.email "<>"
+        - name: commit
+          run: |
+            git add . --all
+            git commit -m "auto doc action"
+            git push origin master
