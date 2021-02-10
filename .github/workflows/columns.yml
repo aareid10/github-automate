@@ -7,7 +7,19 @@ on:
     types: [labeled]
 
 jobs:
-  track_Refactor:
+  track_enhancements:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      name: Issue to Enhancement Tracker
+      if: github.event.label.name == 'refactor'
+      with:
+        action-token: "${{ secrets.AUTOMATION_TOKEN }}"
+        project-url: "https://github.com/aareid10/github-automate/projects/1"
+        column-name: "To Do"
+        label-name: "enhancement"
+        columns-to-ignore: "Done"
+  track_refactors:
     runs-on: ubuntu-latest
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
@@ -19,7 +31,7 @@ jobs:
         column-name: "Refactors"
         label-name: "refactor"
         columns-to-ignore: "To Do,Done"
-  track_Stalled:
+  track_stalled:
     runs-on: ubuntu-latest
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
@@ -31,7 +43,7 @@ jobs:
         column-name: "Stalled"
         label-name: "stalled"
         columns-to-ignore: "To Do,Done"
-  track_Bugs:
+  track_bugs:
     runs-on: ubuntu-latest
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
